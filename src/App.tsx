@@ -1,10 +1,9 @@
-import React from 'react';
-import { Text } from 'react-native'
+import React from 'react'
 
-function App() {
-  return (
-    <Text>Hello</Text>
-  );
+import Buttons from './components/Buttons'
+
+const DATA = ['foo', 'bar', 'buz', 'hoge', 'moge', 'blar', 'poo', 'end']
+
+export default function App() {
+  return <Buttons data={DATA} />
 }
-
-export default App;
