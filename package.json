@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-native": "0.62.1"
+    "@types/react-native": "0.62.1",
+    "prettier": "2.0.2"
   }
 }
