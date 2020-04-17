@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
 interface Props {
   label: string
   getOffset: () => number
-  threshold: number
 }
 
 export default function Button(props: Props) {
@@ -25,7 +24,7 @@ export default function Button(props: Props) {
   }, [props])
   const onPressOut = React.useCallback(() => {
     const delta = Math.abs(props.getOffset() - n.current)
-    if (props.threshold < delta) {
+    if (0 < delta) {
       return
     }
     alert(props.label)
@@ -36,8 +35,4 @@ export default function Button(props: Props) {
       <Text>{props.label}</Text>
     </TouchableOpacity>
   )
-}
-
-Button.defaultProps = {
-  threshold: 16,
 }
