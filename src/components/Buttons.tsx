@@ -21,12 +21,10 @@ function Separator() {
 }
 
 export default function Buttons(props: Props) {
-  const getOffset = React.useCallback(() => window.scrollY, [])
-
   return (
     <FlatList
       data={props.data}
-      renderItem={({ item }) => <Button label={item} getOffset={getOffset} />}
+      renderItem={({ item }) => <Button label={item} />}
       keyExtractor={item => item}
       contentContainerStyle={styles.container}
       ItemSeparatorComponent={Separator}

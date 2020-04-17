@@ -14,24 +14,15 @@ const styles = StyleSheet.create({
 
 interface Props {
   label: string
-  getOffset: () => number
 }
 
 export default function Button(props: Props) {
-  const n = React.useRef(0)
-  const onPressIn = React.useCallback(() => {
-    n.current = props.getOffset()
-  }, [props])
-  const onPressOut = React.useCallback(() => {
-    const delta = Math.abs(props.getOffset() - n.current)
-    if (0 < delta) {
-      return
-    }
+  const onPress = React.useCallback(() => {
     alert(props.label)
   }, [props])
 
   return (
-    <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} delayPressOut={100} style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Text>{props.label}</Text>
     </TouchableOpacity>
   )
